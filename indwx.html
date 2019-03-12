@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BMI</title>
+  <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="headerContent">
+        <img src="./images/BMICLogo.png" alt="" class="headerLogo floatL">
+        <div class="typeDiv floatL">
+          <label for="" class="headerLabel">身高 cm</label><br>
+          <input type="number" placeholder="請輸入身高" class="headerInput headerInputSpace" id="heightId"><br>
+          <label for=""class="headerLabel">體重 kg</label><br>
+          <input type="number"placeholder="請輸入體重" class="headerInput headerInputSpace" id="weightId">
+        </div>
+        <button class="resultCircle floatL" id="btnResult">
+          <p>看結果</p>
+        </button>
+        <div class="clearfix"></div>
+      </div>
+    </header>
+    <main>
+      <h1 class="h1">BMI紀錄</h1>
+      <ul class="bmiUl">
+        <li class="bmiLi" style="border-left: 7px solid #86D73F;"><span class="bmiLevel">理想</span><span class="mainSmalltext">BMI<span class="mainNum">20.90</span></span><span class="mainSmalltext">weight<span class="mainNum">70kg</span></span><span class="mainSmalltext">height<span class="mainNum">180cm</span></span><span class="mainTimeNow">06-19-2017</span></li>
+      </ul>
+    </main>
+    <footer>
+      <img src="./images/BMICLogo-black.png" alt="" class="footerPic">
+    </footer>
+  </div>
+  <script src="./js/all.js"></script>
+</body>
+</html>
