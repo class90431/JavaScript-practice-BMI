@@ -1,0 +1,50 @@
+
+@media screen and (max-width:767px){
+  .liDiv{
+    margin-left: 10px;
+  }
+  .mainNum{
+    font-size: 1rem;
+  }
+  .typeDiv{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width:576px){
+  .bmiUl{
+    width: 100%;
+  }
+  .del{
+    left: 0;top: -20px;
+  }
+  .bmiLi{
+    margin-top: 3rem;
+  }
+  .typeDiv{
+    margin-left: 15%;
+    margin-right: 10%;
+  }
+  .headerInput{
+    width: 80%;
+  }
+}
+@media screen and (max-width:375px){
+  .resultCircle{
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    line-height: 60px;
+  }
+  .bmiLi{
+    width: 98%;
+  }
+  .bmiLevel{
+    font-size: 1rem;
+    width: 32px;
+  }
+  .headerLogo{
+    width: 60px;
+    height: 60px;
+  }
+}

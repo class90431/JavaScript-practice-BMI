@@ -80,18 +80,37 @@ header {
   padding-top: 92px;
 }
 
-.headerLogo {
+.headerContent .headerLogo {
   width: 117px;
   height: 117px;
 }
 
-.typeDiv {
+.headerContent .typeDiv {
   margin-left: 97px;
   margin-right: 150px;
   margin-top: -18px;
 }
 
-.resultCircle {
+.headerContent .typeDiv .headerLabel {
+  font-size: 18px;
+  color: #FFD366;
+}
+
+.headerContent .typeDiv .headerInput {
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid #FFD366;
+  border-radius: 10px;
+  height: 34px;
+  width: 128%;
+  margin-top: 7px;
+}
+
+.headerContent .typeDiv .headerInputSpace {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.headerContent .resultCircle {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -101,14 +120,14 @@ header {
   font-size: 1.5rem;
 }
 
-.resultCircle:hover {
+.headerContent .resultCircle:hover {
   cursor: pointer;
   background: #FFD366;
   -webkit-box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
           box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
 }
 
-.resultCircle:active {
+.headerContent .resultCircle:active {
   background: #DEA821;
 }
 
@@ -118,47 +137,25 @@ textarea::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.headerLabel {
-  font-size: 18px;
-  color: #FFD366;
-}
-
-.headerInput {
-  background: rgba(255, 255, 255, 0.18);
-  border: 2px solid #FFD366;
-  border-radius: 10px;
-  height: 34px;
-  width: 128%;
-  margin-top: 7px;
-}
-
-.headerInputSpace {
-  margin-bottom: 1.5rem;
-  padding-left: 1rem;
-}
-
 main {
   background: #f5f5f5;
+  padding-bottom: 74px;
 }
 
 .h1 {
   text-align: center;
   font-size: 1.5rem;
   padding-top: 3rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: 20px;
 }
 
 .bmiUl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 61%;
+  margin: 0 auto;
 }
 
-.bmiLi {
-  width: 610px;
+.bmiUl .bmiLi {
+  width: 98.8%;
   height: 62px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -166,31 +163,50 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   background: #fff;
+  position: relative;
 }
 
-.bmiLevel {
+.bmiUl .bmiLi .del {
+  position: absolute;
+  left: -80px;
+  top: 20px;
+  text-decoration: none;
+}
+
+.bmiUl .bmiLi .bmiLevel {
   font-size: 20px;
   color: #4A4A4A;
   margin-left: 12px;
+  width: 100px;
 }
 
-.mainSmalltext {
+.bmiUl .bmiLi .liDiv {
+  margin-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bmiUl .bmiLi .liDiv .mainSmalltext {
   font-size: 12px;
   color: #424242;
 }
 
-.mainNum {
+.bmiUl .bmiLi .liDiv .mainSmalltext .mainNum {
   font-size: 20px;
   color: #4A4A4A;
   margin-left: 7px;
 }
 
-.mainTimeNow {
+.bmiUl .bmiLi .liDiv .mainTimeNow {
   font-size: 12px;
   color: #424242;
   margin-right: 11px;
@@ -201,10 +217,63 @@ footer {
   height: 90px;
 }
 
-.footerPic {
+footer .footerPic {
   width: 55px;
   display: block;
   margin: 0 auto;
   padding-top: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .liDiv {
+    margin-left: 10px;
+  }
+  .mainNum {
+    font-size: 1rem;
+  }
+  .typeDiv {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bmiUl {
+    width: 100%;
+  }
+  .del {
+    left: 0;
+    top: -20px;
+  }
+  .bmiLi {
+    margin-top: 3rem;
+  }
+  .typeDiv {
+    margin-left: 15%;
+    margin-right: 10%;
+  }
+  .headerInput {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .resultCircle {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    line-height: 60px;
+  }
+  .bmiLi {
+    width: 98%;
+  }
+  .bmiLevel {
+    font-size: 1rem;
+    width: 32px;
+  }
+  .headerLogo {
+    width: 60px;
+    height: 60px;
+  }
 }
 /*# sourceMappingURL=all.css.map */
