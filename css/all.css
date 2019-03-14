@@ -250,10 +250,16 @@ footer .footerPic {
   }
   .typeDiv {
     margin-left: 15%;
-    margin-right: 10%;
+    margin-right: 5%;
   }
   .headerInput {
     width: 80%;
+  }
+  .resultCircle {
+    width: 80px;
+    height: 80px;
+    font-size: .8rem;
+    line-height: 80px;
   }
 }
 
@@ -261,7 +267,6 @@ footer .footerPic {
   .resultCircle {
     width: 60px;
     height: 60px;
-    font-size: 12px;
     line-height: 60px;
   }
   .bmiLi {
