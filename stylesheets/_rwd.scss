@@ -1,4 +1,14 @@
 
+@media screen and (max-width:968px){
+  .bmiLevelText4{
+    display: none
+  }
+}
+@media screen and (max-width:867px){
+  .bmiLevelText2{
+    display: none
+  }
+}
 @media screen and (max-width:767px){
   .liDiv{
     margin-left: 10px;
@@ -34,9 +44,28 @@
     font-size: .8rem;
     line-height: 80px;
   }
+  .resultCircleChange{
+    width: 80px;
+    height: 80px;
+    font-size: .8rem; 
+  }
+  .loopImg{
+    display: none;
+  }
+  .bmiNum{
+    font-size: 0.8rem;
+  }
+  .bmiText{
+    left: 23px;
+  }
 }
 @media screen and (max-width:375px){
   .resultCircle{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .resultCircleChange{
     width: 60px;
     height: 60px;
     line-height: 60px;

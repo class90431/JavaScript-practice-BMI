@@ -3,7 +3,9 @@ var bmiUl = document.querySelector('.bmiUl');
 var data = JSON.parse(localStorage.getItem('bmi'))||[];
 var delA = document.querySelector('.del');
 
+// 按鈕監聽事件 
 btn.addEventListener('click',addData,false);
+// btn.addEventListener('click',changeBtn,false);
 bmiUl.addEventListener('click',delData,false);
 innerPage();
 
@@ -17,37 +19,30 @@ function addData(e){
   var levelColor = "";
   switch (true) {
     case (bmi>16 && bmi<18.5):
-      // alert('過輕');
       Level = '過輕';
       levelColor = "#31BAF9";
       break;
     case (bmi>18.5 && bmi<25):
-      // alert('理想');
       Level = '理想';
       levelColor = "#86D73F";
       break;
     case (bmi>25 && bmi<30):
-      // alert('過重');
       Level = '過重';
       levelColor = "#FF982D";
       break;
     case (bmi>30 && bmi<35):
-      // alert('輕度肥胖');
       Level = '輕度肥胖';
       levelColor = "#FF6C03";
       break;
     case (bmi>35 && bmi<40):
-      // alert('中度肥胖');
       Level = '中度肥胖';
       levelColor = "#FF6C03";
       break;
     case (bmi>40):
-      // alert('重度肥胖');
       Level = '重度肥胖';
       levelColor = "#FF1200";
       break;
     default:
-    // alert('嚴重體重不足	');
       Level = '體重超輕';
       levelColor = "#99ff35";
       break;
@@ -75,14 +70,58 @@ function addData(e){
     '身高':height,
     '時間':month[dt.getMonth()] + '-' + dt.getDate() + '-' + dt.getFullYear()
   };
+  // 判斷欄位是否為空
   if (document.querySelector('#heightId').value == ""||document.querySelector('#weightId').value ==""){
-    alert('欄位不能為空!')
+    alert('欄位不能為空!');
+    // 終止 function
+    return;
   }else{
   data.push(bmiObj);
-  innerPage();
   localStorage.setItem('bmi',JSON.stringify(data));
+  innerPage();
+  changeBtn();
   document.querySelector('#heightId').value="";
   document.querySelector('#weightId').value="";
+  }
+}
+// 改變按鈕 function
+function changeBtn(e){
+  var newBtn = document.createElement('button');
+  var oldBtn = document.querySelector('#btnResult');
+  var bmiNum = document.createElement('p');
+  var bmiText = document.createElement('p');
+  var bmiLevelText = document.createElement('p');
+  var loopImg = document.createElement('img');
+
+  for (i = data.length-1;i<data.length;){
+    // 動態增加屬性
+    newBtn.setAttribute('class','resultCircleChange');
+    bmiNum.setAttribute('class','bmiNum');
+    bmiText.setAttribute('class','bmiText');
+    loopImg.setAttribute('src','./images/icons_loop.png');
+    loopImg.setAttribute('class','loopImg');
+    newBtn.style.cssText = "color: "+ data[i].levelColor +";border: 6px solid "+ data[i].levelColor +";";
+    loopImg.style.cssText = "background: "+ data[i].levelColor +";";
+    // 動態刪除原本的 btn
+    document.querySelector('.resultCircle').remove(oldBtn);
+    // 動態新增新的 btn
+    document.querySelector('.headerContent').appendChild(newBtn);
+    document.querySelector('.resultCircleChange').appendChild(bmiNum);
+    document.querySelector('.resultCircleChange').appendChild(bmiText);
+    document.querySelector('.resultCircleChange').appendChild(bmiLevelText);
+    document.querySelector('.resultCircleChange').appendChild(loopImg);
+
+    bmiNum.textContent = data[i].BMI值;
+    bmiText.textContent = 'BMI'; 
+
+    if(data[i].Level == '理想' || data[i].Level == '過重'|| data[i].Level == '過輕'){
+      bmiLevelText.textContent = data[i].Level;
+      bmiLevelText.setAttribute('class','bmiLevelText2');
+    }else{
+      bmiLevelText.textContent = data[i].Level;
+      bmiLevelText.setAttribute('class','bmiLevelText4');
+    }
+    return;
   }
 }
 function innerPage(e){

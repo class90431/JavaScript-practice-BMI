@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,17 +53,13 @@ table {
   border-spacing: 0;
 }
 
+body {
+  font-family: '微軟正黑體';
+}
+
 .wrap {
   max-width: 1024px;
   margin: 0 auto;
-}
-
-.floatL {
-  float: left;
-}
-
-.clearfix {
-  clear: both;
 }
 
 header {
@@ -118,6 +115,7 @@ header {
   line-height: 120px;
   text-align: center;
   font-size: 1.5rem;
+  border: 0px;
 }
 
 .resultCircle:hover {
@@ -129,6 +127,51 @@ header {
 
 .resultCircle:active {
   background: #DEA821;
+}
+
+.resultCircleChange {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #424242;
+  color: #86D73F;
+  position: relative;
+}
+
+.bmiNum {
+  font-size: 32px;
+}
+
+.bmiText {
+  font-size: 14px;
+  position: absolute;
+  left: 40px;
+}
+
+.bmiLevelText2 {
+  position: absolute;
+  font-size: 32px;
+  top: 30px;
+  right: -100px;
+}
+
+.bmiLevelText4 {
+  position: absolute;
+  font-size: 32px;
+  top: 30px;
+  right: -150px;
+}
+
+.loopImg {
+  position: absolute;
+  background: #86D73F;
+  border: 3px solid #424242;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 70px;
+  left: 85px;
+  padding: 5px;
 }
 
 input::-webkit-input-placeholder,
@@ -224,6 +267,18 @@ footer .footerPic {
   padding-top: 18px;
 }
 
+@media screen and (max-width: 968px) {
+  .bmiLevelText4 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 867px) {
+  .bmiLevelText2 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .liDiv {
     margin-left: 10px;
@@ -261,10 +316,29 @@ footer .footerPic {
     font-size: .8rem;
     line-height: 80px;
   }
+  .resultCircleChange {
+    width: 80px;
+    height: 80px;
+    font-size: .8rem;
+  }
+  .loopImg {
+    display: none;
+  }
+  .bmiNum {
+    font-size: 0.8rem;
+  }
+  .bmiText {
+    left: 23px;
+  }
 }
 
 @media screen and (max-width: 375px) {
   .resultCircle {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .resultCircleChange {
     width: 60px;
     height: 60px;
     line-height: 60px;

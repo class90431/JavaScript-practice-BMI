@@ -48,6 +48,8 @@
     line-height: 120px;
     text-align: center;
     font-size: 1.5rem;
+    border: 0px;
+    // border: 6px solid #86D73F;
 
     &:hover {
       cursor: pointer;
@@ -58,6 +60,47 @@
     &:active {
       background: #DEA821;
     }
+    
+  }
+  .resultCircleChange{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    // border: 6px solid #86D73F;
+    background: #424242;
+    color: #86D73F;
+    position: relative;
+  }
+  .bmiNum{
+    font-size: 32px;
+  }
+  .bmiText{
+    font-size: 14px;
+    position: absolute;
+    left:40px;
+  }
+  .bmiLevelText2{
+    position: absolute;
+    font-size: 32px;
+    top: 30px;
+    right: -100px;
+  }
+  .bmiLevelText4{
+    position: absolute;
+    font-size: 32px;
+    top: 30px;
+    right: -150px;
+  }
+  .loopImg{
+    position: absolute;
+    background: #86D73F;
+    border: 3px solid #424242;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 70px;
+    left: 85px;
+    padding: 5px;
   }
 
   input::-webkit-input-placeholder,
