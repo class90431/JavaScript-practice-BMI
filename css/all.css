@@ -341,7 +341,6 @@ footer .footerPic {
   .resultCircleChange {
     width: 60px;
     height: 60px;
-    line-height: 60px;
   }
   .bmiLi {
     width: 98%;
@@ -353,6 +352,10 @@ footer .footerPic {
   .headerLogo {
     width: 60px;
     height: 60px;
+  }
+  .bmiText {
+    left: 12px;
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=all.css.map */
